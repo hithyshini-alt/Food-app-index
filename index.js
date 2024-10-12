@@ -22,8 +22,8 @@ app.post('/create-checkout', async (req, res) => {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: 'http://localhost:5173/success',
-      cancel_url: 'http://localhost:5173/failure',
+      success_url: 'https://gilded-marzipan-7ff146.netlify.app/success',
+      cancel_url: 'https://gilded-marzipan-7ff146.netlify.app/failure',
     });
 
     res.json({ id: session.id });
