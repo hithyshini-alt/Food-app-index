@@ -16,14 +16,13 @@ app.post('/create-checkout', async (req, res) => {
     },
     quantity: item.quantity,
   }));
-//https://boisterous-crepe-a0bc3e.netlify.app
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: 'https://gilded-marzipan-7ff146.netlify.app/success',
-      cancel_url: 'https://gilded-marzipan-7ff146.netlify.app/failure',
+      success_url: 'https://lovely-valkyrie-d93c3a.netlify.app/success',
+      cancel_url: 'https://lovely-valkyrie-d93c3a.netlify.app/failure',
     });
 
     res.json({ id: session.id });
